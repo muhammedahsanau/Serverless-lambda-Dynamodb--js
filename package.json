@@ -4,7 +4,6 @@
   "description": "Serverless aws-nodejs-typescript with test cases",
   "main": "serverless.ts",
   "scripts": {
-    "invoke": "serverless invoke local --function hello  --path ./src/functions/hello/mock.json",
     "test": "jest",
     "offline": "serverless offline start"
   },
@@ -17,6 +16,7 @@
     "@middy/http-json-body-parser": "^1.5.2",
     "@middy/validator": "^2.5.1",
     "aws-sdk": "^2.1007.0",
+    "axios": "^0.23.0",
     "faker": "^5.5.3",
     "serverless-dynamodb-local": "^0.2.40"
   },

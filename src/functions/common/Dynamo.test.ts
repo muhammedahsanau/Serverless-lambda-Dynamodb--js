@@ -1,6 +1,7 @@
 const faker = require("faker");
 import { Dynamo } from "./Dynamo";
-import { data, deleteMsg, table_name } from "../../libs/constants";
+// const axios = require("axios");
+import { data,  deleteMsg, table_name  } from "../../libs/constants";
 // import { formatJSONResponse } from "../../libs/apiGateway";
 
 const randomId = Math.random();
@@ -48,8 +49,23 @@ test("should get an item from table", async () => {
   expect(getUser.email).toEqual(user_email);
 });
 
+
+
+
+
 //test => getAll users from Dynamo table
 test("should get all items from table", async () => {
-  let recievedData = await Dynamo.getAllUsers(table_name);
-  expect(recievedData.Count).toEqual(data.message.Count);
+  // let dataFromApi_count = null;
+  // await axios
+  //   .get(URIs.getAllUsers)
+  //   .then(function (response) {
+  //     // handle success
+  //     dataFromApi_count = response.data.message.Count;
+  //   })
+  //   .catch(function (error) {
+  //     // handle error
+  //     console.log(error);
+  //   });
+  let recievedData_from_dynamo = await Dynamo.getAllUsers(table_name);
+   expect(recievedData_from_dynamo.Count).toEqual(data.message.Count);
 });

@@ -1,5 +1,24 @@
 export const table_name:string = 'usersTable_a'
 export const deleteMsg = "{\"Message\":\"user daleted successfully\"}"
+
+
+export const URIs = {
+    getAllUsers: "http://localhost:3000/dev/getUsers",
+    getAUser: "http://localhost:3000/dev/getAUser",
+    saveUser: "http://localhost:3000/dev/saveUser",
+    updateUser: "http://localhost:3000/dev/updateUser",
+    deleteUser: "http://localhost:3000/dev/deleteUser",
+  };
+  
+  
+//   export const URI = {
+//     getAllUsers: "https://vf4ute3ho4.execute-api.us-east-1.amazonaws.com/dev/getUsers",
+//     getAUser: "https://vf4ute3ho4.execute-api.us-east-1.amazonaws.com/dev/getAUser",
+//     saveUser: "https://vf4ute3ho4.execute-api.us-east-1.amazonaws.com/dev/saveUser",
+//     updateUser: "https://vf4ute3ho4.execute-api.us-east-1.amazonaws.com/dev/updateUser",
+//     deleteUser: "https://vf4ute3ho4.execute-api.us-east-1.amazonaws.com/dev/deleteUser",
+//   };
+
 export const data = {
     "message": {
         "Items": [
@@ -48,7 +67,7 @@ export const data = {
                 "ID": 9000
             }
         ],
-        "Count": 19,
+        "Count": 20,
         "ScannedCount": 11
     }
 }
