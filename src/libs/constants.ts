@@ -19,6 +19,7 @@ export const URIs = {
 //     deleteUser: "https://vf4ute3ho4.execute-api.us-east-1.amazonaws.com/dev/deleteUser",
 //   };
 
+
 export const data = {
     "message": {
         "Items": [
@@ -67,8 +68,7 @@ export const data = {
                 "ID": 9000
             }
         ],
-        "Count": 20,
+        "Count": 0,
         "ScannedCount": 11
     }
 }
-

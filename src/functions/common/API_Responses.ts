@@ -1,4 +1,4 @@
-const Responses = {
+let Responses = {
     _200(data = {}) {
         return {
             headers: {

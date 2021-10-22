@@ -1583,8 +1583,10 @@ var middyfy = (handler) => {
 
 // src/functions/common/Dynamo.ts
 var AWS = require("aws-sdk");
-AWS.config.update({ region: "us-east-1" });
-var documentClient = new AWS.DynamoDB.DocumentClient({});
+var documentClient = new AWS.DynamoDB.DocumentClient({
+  region: "localhost",
+  endpoint: "http://localhost:8000"
+});
 var Dynamo = {
   async updateUser(user, TableName) {
     if (!user.ID || !user.email) {
@@ -1667,6 +1669,8 @@ var getAUser = async (event) => {
   if (!user) {
     return formatJSONResponse({ message: "Failed to get the user" });
   }
+  console.log("type of user::", typeof user);
+  console.log("type of formatJSONResponse::", typeof formatJSONResponse({ message: user }));
   return formatJSONResponse({ message: user });
 };
 var main = middyfy(getAUser);

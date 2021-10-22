@@ -4,6 +4,7 @@ import { middyfy } from "@libs/lambda";
 import {Dynamo} from "../common/Dynamo"
 import schema from "./schema";
 import {table_name} from "@libs/constants";
+import { type } from "os";
 const getAUser: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (
   event
 ) => {
@@ -19,6 +20,9 @@ const getAUser: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (
   if (!user) {
     return formatJSONResponse({ message: "Failed to get the user" });
   }
+  console.log("type of user::",typeof user);
+  
+  console.log("type of formatJSONResponse::",typeof formatJSONResponse({ message: user }));
 
   return formatJSONResponse({ message: user });
 };

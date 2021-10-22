@@ -1,5 +1,6 @@
 {
   "extends": "./tsconfig.paths.json",
+  "esModuleInterop":true,
   "compilerOptions": {
     "lib": ["ESNext"],
     "moduleResolution": "node",

@@ -1584,8 +1584,10 @@ var formatJSONResponse = (response) => {
 
 // src/functions/common/Dynamo.ts
 var AWS = require("aws-sdk");
-AWS.config.update({ region: "us-east-1" });
-var documentClient = new AWS.DynamoDB.DocumentClient({});
+var documentClient = new AWS.DynamoDB.DocumentClient({
+  region: "localhost",
+  endpoint: "http://localhost:8000"
+});
 var Dynamo = {
   async updateUser(user, TableName) {
     if (!user.ID || !user.email) {

@@ -1,6 +1,10 @@
 const AWS = require("aws-sdk");
-AWS.config.update({ region: "us-east-1" });
-const documentClient = new AWS.DynamoDB.DocumentClient({});
+// AWS.config.update({ region: "us-east-1" });
+
+const documentClient = new AWS.DynamoDB.DocumentClient({
+  region: "localhost",
+  endpoint: "http://localhost:8000"
+});
 
 export const Dynamo = {
   async updateUser(user, TableName) {
